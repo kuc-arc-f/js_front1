@@ -31,8 +31,9 @@ yarn dev
 ```
 
 ***
-### Blog:
+### more:
 
+https://cms-kuc-js-front1.pages.dev/pages/20220402150651
 
 ***
 
