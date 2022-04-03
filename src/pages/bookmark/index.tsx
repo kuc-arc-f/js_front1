@@ -213,37 +213,24 @@ console.log(this.state);
             ))
             }
             </select>
-
           </div>
-
         </div>
-
         <hr className="my-1" />
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-          {data.map((item: any ,index: number) => {
-            let categoryName = "";
-            let category = this.state.categoryItems.filter(
-              categoryItem => (categoryItem.id === item.bmCategoryId)
-            );
-            if(category.length > 0){
-              categoryName = category[0].name;
-            }            
+        {data.map((item: any ,index: number) => {
+          let categoryName = "";
+          let category = this.state.categoryItems.filter(
+            categoryItem => (categoryItem.id === item.bmCategoryId)
+          );
+          if(category.length > 0){
+            categoryName = category[0].name;
+          }            
 //           console.log(categoryName);
-            return (
-              <IndexRow key={index} id={item.id} title={item.title} date={item.createdAt} 
-              url={item.url} bmCategoryId={item.bmCategoryId} categoryName={categoryName}
-              />
-            )
-          })}      
-          </tbody>
-        </table>
+          return (
+            <IndexRow key={index} id={item.id} title={item.title} date={item.createdAt} 
+            url={item.url} bmCategoryId={item.bmCategoryId} categoryName={categoryName}
+            />
+          )
+        })}      
         <hr />
         {this.state.paginate_display ? (
         <nav aria-label="Page navigation comments" className="mt-4">
@@ -281,6 +268,8 @@ console.log(this.state);
       </div>
       <style>{`
       .search_key_wrap{ width: 200px; }
+      .card_col_body{ text-align: left; width: 100%;}
+      .card_col_icon{ font-size: 2.4rem; }      
       `}</style>
     </Layout>
     );
