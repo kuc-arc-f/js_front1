@@ -6,7 +6,7 @@
 
  date    : 2022/03/31
 
- update  : 2022/04/02
+ update  : 2022/04/06
 
 ***
 ### Summary
@@ -40,4 +40,19 @@ https://github.com/kuc-arc-f/apollo_sv1
 https://cms-kuc-js-front1.pages.dev/pages/20220402150651
 
 ***
+### bookmark
+
+* bookmark tool
+
+![img](https://img-static-kuc.netlify.app/img/js-front1/ss-bm-0402a2.png)
+
+***
+### todo
+
+* Todo tool, xlsx output possible
+
+![img](https://img-static-kuc.netlify.app/img/js-front1/todo/ss-todo-2list.png)
+
+***
+
 
