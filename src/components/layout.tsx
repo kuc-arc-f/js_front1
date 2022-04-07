@@ -14,6 +14,10 @@ function Layout({ children }) {
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         ></Script>
+      {/*
+      <Script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"
+        ></Script>
+      */}
       <Navibar />
       <hr className="my-0" />
       {children}

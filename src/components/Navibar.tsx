@@ -39,6 +39,11 @@ export default function Navibar(){
               <a className="nav-link active" aria-current="page">Todos</a>
             </Link>             
           </li>          
+          <li className="nav-item">
+            <Link href="/measure">
+              <a className="nav-link active" aria-current="page">Measure</a>
+            </Link>             
+          </li>          
         </ul>
         <ul className="navbar-nav d-flex">
           <li className="nav-item">
