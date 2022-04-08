@@ -14,7 +14,7 @@ const IndexRow = props => (
               <Link href={`/todos/${props.id}`}><a>{props.title}</a>
               </Link>
             </h3>
-            {props.date} , ID : {props.id} , {}
+            {props.date} , ID : {props.id} 
             <Link href={`/todos/edit/${props.id}`}>
               <a className="btn btn-sm btn-outline-primary mx-2 mt-2"> Edit</a>
             </Link><br />                    

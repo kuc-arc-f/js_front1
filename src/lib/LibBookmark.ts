@@ -35,6 +35,24 @@ console.log(typeof categoryItems);
       console.log(e);
       throw new Error('error, convertItems');
     }
-  },  
+  },
+  /* 最大Ｎ文字までの、URLを返す */
+  getUrlShort: function(url: string){
+    try{
+      let ret: string= "";
+      const maxUrl = 50;
+//console.log("len=", url.length);
+      if( url.length > maxUrl){
+        url = url.substring(1, maxUrl)
+        url = url + "...";
+      }
+      ret = url;
+      return ret;
+    } catch (e) {
+      console.log(e);
+      throw new Error('error, getUrlShort');
+    }
+  },
+
 }
 export default LibBookmark;

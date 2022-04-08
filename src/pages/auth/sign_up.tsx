@@ -36,11 +36,11 @@ console.log(email.value);
   return (
   <Layout>
     <div className="container py-4">
-      <h1>ユーザ登録</h1>
+      <h1>SignUp</h1>
       <form onSubmit={handleSubmit}>
         <SignUpBox />
         <div>
-          <button>登録</button>
+          <button className="btn btn-primary">Save</button>
         </div>
       </form>
     </div>

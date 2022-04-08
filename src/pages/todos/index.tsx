@@ -210,7 +210,8 @@ console.log(this.state);
         </ul>  
         {/* data */}      
         {data.map((item: any ,index: number) => {
-          let date = LibCommon.converDateString(item.createdAt);
+//          let date = LibCommon.converDateString(item.createdAt);
+          let date = LibCommon.converDatetimeString(item.createdAt);
   //console.log(item.values.title);  created_at
           return (
             <IndexRow key={index} id={item.id} title={item.title} date={date} />

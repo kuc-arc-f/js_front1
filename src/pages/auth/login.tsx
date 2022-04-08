@@ -41,17 +41,17 @@ console.log("handleSubmit");
   return (
   <Layout>
     <div className="container py-4">
-      <h1>login</h1>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <LoginBox />
         <div>
-          <button>Login</button>
+          <button className="btn btn-primary">Login</button>
         </div>
       </form>
       <hr />
       <div>
       <Link href="/auth/sign_up">
-        <a><button>Register</button></a>
+        <a><button className="btn btn-outline-primary">SignUp</button></a>
       </Link>        
       </div>      
     </div>

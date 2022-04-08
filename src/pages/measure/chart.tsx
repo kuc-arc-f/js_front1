@@ -126,11 +126,15 @@ console.log(this.state);
       {this.state.button_display ? (<div />): (
         <LoadingBox></LoadingBox>
       )}       
-      <div className="container py-4">
+      <div className="container mt-1 mb-4">
+        <Link href="/measure">
+          <a className="btn btn-outline-primary mt-1">Back</a>
+        </Link>
+         <hr className="mt-2 mb-2" />
         <h3>Chart</h3>
         <hr className="my-1" />
         <Line options={options} data={data} />
-        <hr className="my-1" />
+        <hr className="mt-1 mb-4" />
       </div>
     </Layout>
     );

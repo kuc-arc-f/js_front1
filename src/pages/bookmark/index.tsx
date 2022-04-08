@@ -168,7 +168,7 @@ console.log(uid);
   render(){
     const currentPage = Math.round(this.state.offset / perPage);
     const data = this.state.items;
-console.log(this.state);
+//console.log(this.state);
     return(
     <Layout>
       {this.state.button_display ? (<div />): (

@@ -2,23 +2,17 @@ import Link from 'next/link';
 import moment from 'moment';
 import LibBookmark from '@/lib/LibBookmark';
 
-/*
-interface IProps {
-  categoryItems: Array<any>,
-  id: number,
-  title: string,
-  url: string,
-  date: any,
-  bmCategoryId: number,
-}
-*/
 const IndexRow = function (props){
   const categoryItems: Array<any> = props.categoryItems;
   let dtObj = new Date(Number(props.date));
   let dt = moment(dtObj);
   const dtStr = dt.format("YYYY-MM-DD HH:mm")
-  //console.log(typeof props.date)
-  //console.log(String(dtObj) )
+  let displayUrl = "";
+//console.log(typeof props.url);
+  if(typeof props.url === 'string'){
+    displayUrl = LibBookmark.getUrlShort(props.url);
+  }
+//console.log(displayUrl)
   return (
   <div className="row justify-content-center">
     <div className="task_card_box card shadow-lg mb-2">
@@ -32,7 +26,7 @@ const IndexRow = function (props){
               <Link href={`${props.url}`}><a target="_brank">{props.title}</a>
               </Link>
             </h3>
-            {props.url} 
+            {displayUrl} 
             <Link href={`${props.url}`}>
               <a className='btn btn-primary mx-2' target="_brank">Open</a>
             </Link><br />                                    
@@ -48,23 +42,4 @@ const IndexRow = function (props){
   )
 };
 export default IndexRow;
-/*
-  <tr>
-    <td>
-      <h3>
-        <Link href={`${props.url}`}><a target="_brank">{props.title}</a>
-        </Link>
-      </h3>
-      {props.url}
-      <Link href={`${props.url}`}>
-        <a className='btn btn-sm btn-outline-primary mx-2' target="_brank">Open</a>
-      </Link><br />
-      {props.categoryName} {dtStr} , ID: {props.id}
-    </td>
-    <td>
-      <Link href={`/bookmark/edit/${props.id}`}>
-        <a className="btn btn-sm btn-outline-primary"> Edit</a>
-      </Link>
-    </td>
-  </tr>
-*/
+
