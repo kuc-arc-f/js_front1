@@ -176,8 +176,22 @@ export default class NotesIndex extends React.Component<IProps, IState> {
       {this.state.button_display ? (<div />): (
         <LoadingBox></LoadingBox>
       )}       
-      <div className="container py-4">
-        <h3>Measure - index</h3>
+      <div className="container mt-1 mb-4">
+        <div className="row">
+          <div className="col-md-6"><h3>Measure - index</h3>
+          </div>
+          <div className="col-md-6 month_move_wrap text-center">
+            <button  className="btn btn-sm btn-outline-primary mx-2"
+            onClick={() => this.clickBeforeMonth()} >⇐
+            </button>
+            <label>
+              <input type="month" id="month" name="month" className="form-control"  />
+            </label>  
+            <button  className="btn btn-sm btn-outline-primary mx-2"
+            onClick={() => this.clickNextMonth()}>⇒
+            </button>
+          </div>
+        </div>
         <hr className="my-1" />
         <div className="row">
           <div className="col-md-4">
@@ -193,28 +207,17 @@ export default class NotesIndex extends React.Component<IProps, IState> {
             </Link>
           </div>
           <div className="col-md-4 text-end">
-            <button className="btn btn-sm btn-outline-success mx-2"
+            <button className="btn btn-sm btn-outline-success mx-2 mt-1"
               onClick={(e) => this.clickHandler(e)}>xlsx Export
             </button>
           </div>
-        </div>
-        <hr className="my-1" />
-        <div className="month_move_wrap text-center" >
-          <button  className="btn btn-sm btn-outline-primary mx-2"
-          onClick={() => this.clickBeforeMonth()} >⇐
-          </button>
-          <label>
-            <input type="month" id="month" name="month" className="form-control"  />
-          </label>  
-          <button  className="btn btn-sm btn-outline-primary mx-2"
-          onClick={() => this.clickNextMonth()}>⇒
-          </button>
         </div>
         <hr className="my-1" />
         <table className="table table-hover">
           <thead>
             <tr>
               <th>Value</th>
+              <th> </th>
               <th>Actions</th>
             </tr>
           </thead>
