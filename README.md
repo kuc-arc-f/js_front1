@@ -1,6 +1,6 @@
 ﻿# js_front1
 
- Version: 0.9.3
+ Version: 0.9.4
 
  Author  : Kouji Nakashima / kuc-arc-f.com
 
@@ -59,6 +59,14 @@ https://cms-kuc-js-front1.pages.dev/
 * measure data tool, chart display, xlsx output 
 
 ![img](https://img-static-kuc.netlify.app/img/js-front1/measure/ss-mdat-0407b-chart.png)
+
+***
+### memo
+
+* memo tool, markdown input
+
+
+![img](https://img-static-kuc.netlify.app/img/js-front1/memo/ss-memo-1show.png)
 
 ***
 

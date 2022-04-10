@@ -36,6 +36,11 @@ export default function Navibar(){
             </Link>             
           </li>          
           <li className="nav-item">
+            <Link href="/memo">
+              <a className="nav-link active" aria-current="page">Memo</a>
+            </Link>             
+          </li>          
+          <li className="nav-item">
             <Link href="/measure">
               <a className="nav-link active" aria-current="page">Measure</a>
             </Link>             

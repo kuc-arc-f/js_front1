@@ -43,7 +43,7 @@ console.log(typeof categoryItems);
       const maxUrl = 50;
 //console.log("len=", url.length);
       if( url.length > maxUrl){
-        url = url.substring(1, maxUrl)
+        url = url.substring(0, maxUrl)
         url = url + "...";
       }
       ret = url;
