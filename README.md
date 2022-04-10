@@ -6,12 +6,12 @@
 
  date    : 2022/03/31
 
- update  : 2022/04/08
+ update  : 2022/04/10
 
 ***
 ### Summary
 
-Next.js 12 + apollo-client , js_front1 frontend
+Next.js 12 + apollo-client , js_front1 frontend, ph-3
 
 * server : apollo_sv1
 
