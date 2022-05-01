@@ -175,10 +175,29 @@ console.log(this.state);
         )
         }        
         <div className="container">
-          <Link href="/todos">
-            <a className="btn btn-outline-primary mt-2">Back</a></Link>
+          <div className="row">
+            <div className="col-md-4">
+              <Link href="/todos">
+              <a className="btn btn-outline-primary mt-2">Back</a></Link>
+            </div>
+            <div className="col-md-4"><h3>Todo - Edit</h3>
+            </div>
+            <div className="col-md-4">
+              {this.state.button_display ? (
+              <div>
+                <div className="form-group mt-2">
+                  <button className="btn btn-primary" onClick={this.handleClick}>Save
+                  </button>
+                  <button className="btn btn-outline-success mx-2"
+                  onClick={() => this.handleClickComplete()}>{complete_btn_name}
+                  </button>            
+                </div>
+              </div>
+              ): ""
+              } 
+            </div>
+          </div>
           <hr className="my-1" />
-          <h1>Todo - Edit</h1>
           ID : {this.props.id}
           <hr className="my-1" />
           <div className="col-md-6 form-group">
@@ -196,28 +215,30 @@ console.log(this.state);
           </div>          
           {this.state.button_display ? (
           <div>
+            {/*
+            */}
             <div className="form-group mt-2">
-              <button className="btn btn-primary" onClick={this.handleClick}>Save
-              </button>
-            </div>
-            <hr className="my-1" /> 
-            <button className="btn btn-outline-success btn-sm mt-2"
-            onClick={() => this.handleClickComplete()}>{complete_btn_name}
-            </button>            
-                             
-            <hr className="my-1" /> 
-            <div className="form-group">
               <button className="btn btn-danger" onClick={this.handleClickDelete}>Delete
               </button>
             </div>
           </div>
           ): ""
-        }          
-        <hr className="my-1" />
+          }          
+        <hr className="my-2" />
           
         </div>
       </Layout>
     );
   }
 }
-
+/*
+  <div className="form-group mt-2">
+    <button className="btn btn-primary" onClick={this.handleClick}>Save
+    </button>
+  </div>
+  <hr className="my-1" /> 
+  <button className="btn btn-outline-success btn-sm mt-2"
+  onClick={() => this.handleClickComplete()}>{complete_btn_name}
+  </button>            
+  <hr className="my-1" /> 
+*/

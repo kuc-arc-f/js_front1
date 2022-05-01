@@ -81,7 +81,7 @@ console.log( "user_id=" , uid)
       const result = await client.mutate({
         mutation:  gql`
         mutation {
-          deleteTodo(id: ${this.props.id}){
+          deleteMemo(id: ${this.props.id}){
             id
           }
         }
@@ -93,7 +93,7 @@ console.log(result);
         throw new Error('Error , deleteTask');
       }
 */
-      Router.push('/todos');      
+      Router.push('/memo');      
     } catch (error) {
       console.error(error);
     }     
@@ -147,10 +147,25 @@ console.log(this.state);
       )
       }        
       <div className="container">
-        <Link href="/memo">
-          <a className="btn btn-outline-primary mt-2">Back</a></Link>
-        <hr className="my-1" />
-        <h3>Memo - Edit</h3>
+        <div className="row">
+          <div className="col-md-4">
+            <Link href="/memo">
+            <a className="btn btn-outline-primary mt-2">Back</a></Link>
+          </div>
+          <div className="col-md-4"><h3>Memo - Edit</h3>
+          </div>
+          <div className="col-md-4 text-center">
+            {this.state.button_display ? (
+            <div>
+              <div className="form-group mt-2">
+                <button className="btn btn-primary" onClick={this.handleClick}>Save
+                </button>
+              </div>
+            </div>
+            ): ""
+            }
+          </div>
+        </div>
         <hr className="my-1" />
         <div className="col-md-6 form-group">
           <label>Title:</label>
@@ -158,7 +173,7 @@ console.log(this.state);
           defaultValue={this.state.title}
             />
         </div>
-        <div className="form-group">
+        <div className="form-group mt-2">
           <label>Content:</label>
           <div className="col-sm-12">
             <textarea name="content" id="content" className="form-control"
@@ -167,12 +182,9 @@ console.log(this.state);
         </div>          
         {this.state.button_display ? (
         <div>
+          {/*
+          */}
           <div className="form-group mt-2">
-            <button className="btn btn-primary" onClick={this.handleClick}>Save
-            </button>
-          </div>
-          <hr className="my-1" /> 
-          <div className="form-group">
             <button className="btn btn-danger" onClick={this.handleClickDelete}>Delete
             </button>
           </div>
@@ -188,3 +200,10 @@ console.log(this.state);
   }
 }
 
+/*
+  <div className="form-group mt-2">
+    <button className="btn btn-primary" onClick={this.handleClick}>Save
+    </button>
+  </div>
+  <hr className="my-1" /> 
+*/
