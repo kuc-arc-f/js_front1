@@ -9,6 +9,7 @@ import client from '@/apollo-client'
 import LibCookie from "@/lib/LibCookie";
 import Layout from '@/components/layout'
 import LoadingBox from '@/components/LoadingBox'
+import MessageBox from '@/components/MessageBox'
 
 interface IState {
   title: string,
@@ -17,6 +18,7 @@ interface IState {
   _token: string,
   userId: string,
   button_display: boolean,
+  message: string,
 }
 interface IProps {
   id: string,
@@ -58,7 +60,7 @@ console.log(data.data.memo);
       content: this.props.item.content,
       complete: this.props.item.complete,
       _token : this.props.csrf.token,
-      userId: '', button_display: false,
+      userId: '', button_display: false, message: '',
     }
 console.log(this.props )
   }
@@ -123,12 +125,13 @@ console.log(result);
       `
       });
 console.log(result);
+      this.setState({message: "Success , Save"});
 /*
       if(result.data.updateBook.id === 'undefined'){
         throw new Error('Error , updateBook');
       }
 */
-      Router.push('/memo');
+//      Router.push('/memo');
     } catch (error) {
       console.error(error);
       alert("Error, save item");
@@ -145,7 +148,8 @@ console.log(this.state);
       {this.state.button_display ? (<div />): (
         <LoadingBox></LoadingBox>
       )
-      }        
+      }
+      <MessageBox success={this.state.message} error=""/>         
       <div className="container">
         <div className="row">
           <div className="col-md-4">
@@ -160,6 +164,10 @@ console.log(this.state);
               <div className="form-group mt-2">
                 <button className="btn btn-primary" onClick={this.handleClick}>Save
                 </button>
+                <Link href={`/memo/${this.props.id}`}>
+                  <a><button className="btn btn-outline-primary mx-2">Preview</button>
+                  </a>
+                </Link>                
               </div>
             </div>
             ): ""

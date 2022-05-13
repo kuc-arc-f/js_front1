@@ -78,9 +78,17 @@ export default class Page extends React.Component<IProps, IState> {
       )}       
       <Head><title key="title">{this.state.item.title}</title></Head>
       <div className="container bg-light">
-        <div className="hidden_print">
-          <Link href="/memo">
-            <a className="btn btn-outline-primary mt-2">Back</a></Link>
+        <div className="row hidden_print">
+          <div className="col-md-6">
+            <Link href="/memo">
+              <a className="btn btn-outline-primary mt-2">Back</a>
+            </Link>
+          </div>
+          <div className="col-md-6 text-center">
+            <Link href={`/memo/edit/${this.state.item.id}`}>
+              <a className="btn btn-primary mt-2">Edit</a>
+            </Link>            
+          </div>
         </div> 
         <div className="card shadow-sm my-2">
           <div className="card-body">

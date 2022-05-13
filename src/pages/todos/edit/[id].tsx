@@ -9,6 +9,7 @@ import client from '@/apollo-client'
 import LibCookie from "@/lib/LibCookie";
 import Layout from '@/components/layout'
 import LoadingBox from '@/components/LoadingBox'
+import MessageBox from '@/components/MessageBox'
 
 interface IState {
   title: string,
@@ -17,6 +18,7 @@ interface IState {
   _token: string,
   userId: string,
   button_display: boolean,
+  message: string,
 }
 interface IProps {
   id: string,
@@ -59,7 +61,7 @@ console.log(data.data.todo);
       content: this.props.item.content,
       complete: this.props.item.complete,
       _token : this.props.csrf.token,
-      userId: '', button_display: false,
+      userId: '', button_display: false, message: '',
     }
 console.log(this.props )
   }
@@ -124,12 +126,13 @@ console.log(result);
       `
       });
 console.log(result);
+      this.setState({message: "Success , Save"});
 /*
       if(result.data.updateBook.id === 'undefined'){
         throw new Error('Error , updateBook');
       }
 */
-      Router.push('/todos');
+//      Router.push('/todos');
     } catch (error) {
       console.error(error);
       alert("Error, save item");
@@ -152,6 +155,7 @@ console.log(result);
       `
       });
 console.log(result);
+//      this.setState({message: "Success , Save"});
       Router.push('/todos');      
     } catch (e) {
       console.error(e);
@@ -173,24 +177,29 @@ console.log(this.state);
         {this.state.button_display ? (<div />): (
           <LoadingBox></LoadingBox>
         )
-        }        
+        }
+        <MessageBox success={this.state.message} error=""/>         
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <Link href="/todos">
               <a className="btn btn-outline-primary mt-2">Back</a></Link>
             </div>
-            <div className="col-md-4"><h3>Todo - Edit</h3>
+            <div className="col-md-3"><h3>Todo - Edit</h3>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-6 text-center">
               {this.state.button_display ? (
               <div>
-                <div className="form-group mt-2">
-                  <button className="btn btn-primary" onClick={this.handleClick}>Save
+                <div className="form-group mt-2 ">
+                  <button className="btn btn-primary mx-2" onClick={this.handleClick}>Save
                   </button>
                   <button className="btn btn-outline-success mx-2"
                   onClick={() => this.handleClickComplete()}>{complete_btn_name}
-                  </button>            
+                  </button>
+                  <Link href={`/todos/${this.props.id}`}>
+                    <a><button className="btn btn-outline-primary">Preview</button>
+                    </a>
+                  </Link>                              
                 </div>
               </div>
               ): ""
